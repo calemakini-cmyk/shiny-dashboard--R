@@ -1,5 +1,5 @@
 # =============================================================================
-#  MAKINI CALEB — Live Analytics Dashboard (v10, fixed XGB + XAI)
+#  MAKINI CALEB — Live Analytics Dashboard 
 # =============================================================================
 
 need <- c("shiny","shinydashboard","DT","ggplot2","dplyr","tidyr",
@@ -22,7 +22,7 @@ options(shiny.maxRequestSize = 500 * 1024^2)
 `%||%` <- function(a,b) if (is.null(a) || length(a) == 0) b else a
 
 # =============================================================================
-#  DATA GENERATORS  (unchanged)
+#  DATA GENERATORS  
 # =============================================================================
 gen_dtcln <- function() {
   set.seed(1); n <- 300
@@ -155,7 +155,7 @@ gen_eco <- function() {
 }
 
 # =============================================================================
-#  UI  (unchanged)
+#  UI  
 # =============================================================================
 ui <- dashboardPage(
   skin = "purple",
@@ -1396,7 +1396,7 @@ server <- function(input, output, session) {
   })
   
   # =========================================================
-  #  XAI  — FIXED
+  #  XAI 
   # =========================================================
   output$xa_glob <- renderPlot({
     tryCatch({
